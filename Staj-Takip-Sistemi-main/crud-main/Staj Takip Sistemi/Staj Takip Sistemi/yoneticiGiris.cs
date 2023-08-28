@@ -78,7 +78,7 @@ namespace Staj_Takip_Sistemi
 			{
 				if (dr.Read())
 				{
-					personelEkranı dgiris = new personelEkranı();
+					personelPanel dgiris = new personelPanel();
 					dgiris.Show();
 					this.Hide();
 

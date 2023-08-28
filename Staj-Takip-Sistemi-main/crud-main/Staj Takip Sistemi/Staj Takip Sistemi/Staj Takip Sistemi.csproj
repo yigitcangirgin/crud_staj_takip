@@ -64,12 +64,6 @@
     <Compile Include="kullaniciGiris.Designer.cs">
       <DependentUpon>kullaniciGiris.cs</DependentUpon>
     </Compile>
-    <Compile Include="personelEkranı.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="personelEkranı.Designer.cs">
-      <DependentUpon>personelEkranı.cs</DependentUpon>
-    </Compile>
     <Compile Include="personelPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,9 +98,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="kullaniciGiris.resx">
       <DependentUpon>kullaniciGiris.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="personelEkranı.resx">
-      <DependentUpon>personelEkranı.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="personelPanel.resx">
       <DependentUpon>personelPanel.cs</DependentUpon>

@@ -41,14 +41,12 @@
             this.stajyerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stajyerTableAdapter = new Staj_Takip_Sistemi.StajProjeDataSetTableAdapters.StajyerTableAdapter();
             this.stajyerData = new System.Windows.Forms.DataGridView();
-            this.guncelleBtn = new System.Windows.Forms.Button();
             this.stajyerIDtxt = new System.Windows.Forms.TextBox();
             this.stajyerSoyadTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.stajyerAdTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.deleteBtn = new System.Windows.Forms.Button();
             this.departmanTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.personelTxt = new System.Windows.Forms.TextBox();
@@ -60,7 +58,9 @@
             this.bitisTxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lblmesaj = new System.Windows.Forms.Label();
-            this.refreshButton = new System.Windows.Forms.Button();
+            this.yenileButon = new System.Windows.Forms.Button();
+            this.guncelleButon = new System.Windows.Forms.Button();
+            this.kayıtsilButon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).BeginInit();
@@ -159,17 +159,6 @@
             this.stajyerData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stajyerData_CellClick);
             this.stajyerData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stajyerData_CellContentClick);
             // 
-            // guncelleBtn
-            // 
-            this.guncelleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.guncelleBtn.Location = new System.Drawing.Point(967, 364);
-            this.guncelleBtn.Name = "guncelleBtn";
-            this.guncelleBtn.Size = new System.Drawing.Size(121, 32);
-            this.guncelleBtn.TabIndex = 45;
-            this.guncelleBtn.Text = "Güncelle";
-            this.guncelleBtn.UseVisualStyleBackColor = true;
-            this.guncelleBtn.Click += new System.EventHandler(this.guncelleBtn_Click);
-            // 
             // stajyerIDtxt
             // 
             this.stajyerIDtxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(255)))), ((int)(((byte)(253)))));
@@ -235,17 +224,6 @@
             this.label1.Size = new System.Drawing.Size(189, 38);
             this.label1.TabIndex = 67;
             this.label1.Text = ":Adı";
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.deleteBtn.Location = new System.Drawing.Point(967, 422);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(121, 32);
-            this.deleteBtn.TabIndex = 76;
-            this.deleteBtn.Text = "Kayıt Sil";
-            this.deleteBtn.UseVisualStyleBackColor = true;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // departmanTxt
             // 
@@ -368,16 +346,50 @@
             this.lblmesaj.Text = "!Kayıt Silindi";
             this.lblmesaj.Visible = false;
             // 
-            // refreshButton
+            // yenileButon
             // 
-            this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.refreshButton.Location = new System.Drawing.Point(967, 304);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(121, 32);
-            this.refreshButton.TabIndex = 88;
-            this.refreshButton.Text = "Yenile";
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.button1_Click);
+            this.yenileButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(211)))), ((int)(((byte)(226)))));
+            this.yenileButon.FlatAppearance.BorderSize = 0;
+            this.yenileButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.yenileButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.yenileButon.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.yenileButon.Location = new System.Drawing.Point(967, 304);
+            this.yenileButon.Name = "yenileButon";
+            this.yenileButon.Size = new System.Drawing.Size(121, 32);
+            this.yenileButon.TabIndex = 89;
+            this.yenileButon.Text = "Yenile";
+            this.yenileButon.UseVisualStyleBackColor = false;
+            this.yenileButon.Click += new System.EventHandler(this.yenileButon_Click);
+            // 
+            // guncelleButon
+            // 
+            this.guncelleButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(211)))), ((int)(((byte)(226)))));
+            this.guncelleButon.FlatAppearance.BorderSize = 0;
+            this.guncelleButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.guncelleButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guncelleButon.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.guncelleButon.Location = new System.Drawing.Point(967, 359);
+            this.guncelleButon.Name = "guncelleButon";
+            this.guncelleButon.Size = new System.Drawing.Size(121, 30);
+            this.guncelleButon.TabIndex = 90;
+            this.guncelleButon.Text = "Güncelle";
+            this.guncelleButon.UseVisualStyleBackColor = false;
+            this.guncelleButon.Click += new System.EventHandler(this.guncelleButon_Click);
+            // 
+            // kayıtsilButon
+            // 
+            this.kayıtsilButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(211)))), ((int)(((byte)(226)))));
+            this.kayıtsilButon.FlatAppearance.BorderSize = 0;
+            this.kayıtsilButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.kayıtsilButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kayıtsilButon.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.kayıtsilButon.Location = new System.Drawing.Point(967, 421);
+            this.kayıtsilButon.Name = "kayıtsilButon";
+            this.kayıtsilButon.Size = new System.Drawing.Size(121, 29);
+            this.kayıtsilButon.TabIndex = 91;
+            this.kayıtsilButon.Text = "Kayıt Sil";
+            this.kayıtsilButon.UseVisualStyleBackColor = false;
+            this.kayıtsilButon.Click += new System.EventHandler(this.kayıtsilButon_Click);
             // 
             // stajyerBilgi
             // 
@@ -386,7 +398,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1391, 781);
             this.ControlBox = false;
-            this.Controls.Add(this.refreshButton);
+            this.Controls.Add(this.kayıtsilButon);
+            this.Controls.Add(this.guncelleButon);
+            this.Controls.Add(this.yenileButon);
             this.Controls.Add(this.lblmesaj);
             this.Controls.Add(this.personelTxt);
             this.Controls.Add(this.label4);
@@ -398,14 +412,12 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.departmanTxt);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.stajyerIDtxt);
             this.Controls.Add(this.stajyerSoyadTxt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.stajyerAdTxt);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.guncelleBtn);
             this.Controls.Add(this.stajyerData);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.exitBtn);
@@ -446,14 +458,12 @@
         private System.Windows.Forms.BindingSource stajyerBindingSource;
         private StajProjeDataSetTableAdapters.StajyerTableAdapter stajyerTableAdapter;
         private System.Windows.Forms.DataGridView stajyerData;
-        private System.Windows.Forms.Button guncelleBtn;
         private System.Windows.Forms.TextBox stajyerIDtxt;
         private System.Windows.Forms.TextBox stajyerSoyadTxt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox stajyerAdTxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.TextBox departmanTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox personelTxt;
@@ -465,6 +475,8 @@
         private System.Windows.Forms.TextBox bitisTxt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblmesaj;
-        private System.Windows.Forms.Button refreshButton;
+        private System.Windows.Forms.Button yenileButon;
+        private System.Windows.Forms.Button guncelleButon;
+        private System.Windows.Forms.Button kayıtsilButon;
     }
 }

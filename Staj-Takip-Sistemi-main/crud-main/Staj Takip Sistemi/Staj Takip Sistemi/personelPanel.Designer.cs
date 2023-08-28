@@ -46,7 +46,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.stajyerNotxt = new System.Windows.Forms.TextBox();
@@ -55,6 +54,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.startTime = new System.Windows.Forms.DateTimePicker();
             this.finishTime = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
@@ -213,17 +213,6 @@
             this.stajyerDepartmantxt.Size = new System.Drawing.Size(353, 22);
             this.stajyerDepartmantxt.TabIndex = 62;
             // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(422, 12);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(538, 127);
-            this.label6.TabIndex = 63;
-            this.label6.Text = "Kıyı Emniyeti Genel Müdürlüğü Personel Sistemine Hoşgeldiniz.";
-            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -309,6 +298,17 @@
             this.finishTime.Size = new System.Drawing.Size(353, 26);
             this.finishTime.TabIndex = 75;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(344, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(682, 25);
+            this.label2.TabIndex = 76;
+            this.label2.Text = "Kıyı Emniyeti Genel Müdürlüğü Personel Sistemine Hoşgeldiniz.";
+            // 
             // personelPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -316,6 +316,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1404, 769);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.finishTime);
             this.Controls.Add(this.startTime);
             this.Controls.Add(this.button2);
@@ -324,7 +325,6 @@
             this.Controls.Add(this.stajyerNotxt);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.stajyerDepartmantxt);
             this.Controls.Add(this.stajyerSoyadtxt);
             this.Controls.Add(this.label5);
@@ -347,7 +347,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "personelPanel";
             this.TransparencyKey = System.Drawing.Color.White;
-            this.Load += new System.EventHandler(this.personelPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).EndInit();
@@ -376,7 +375,6 @@
 		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.ToolTip toolTip2;
 		private System.Windows.Forms.ToolTip toolTip3;
-		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TextBox stajyerNotxt;
@@ -385,5 +383,6 @@
 		private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker startTime;
         private System.Windows.Forms.DateTimePicker finishTime;
+        private System.Windows.Forms.Label label2;
     }
 }

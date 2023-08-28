@@ -22,10 +22,6 @@ namespace Staj_Takip_Sistemi
 			InitializeComponent();
 		}
 
-		private void personelPanel_Load(object sender, EventArgs e)
-		{
-
-		}
 
 
 		private void exitBtn_MouseHover(object sender, EventArgs e)

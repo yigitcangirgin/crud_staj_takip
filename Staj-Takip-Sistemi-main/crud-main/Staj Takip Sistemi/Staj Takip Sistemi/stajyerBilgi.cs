@@ -29,7 +29,7 @@ namespace Staj_Takip_Sistemi
 		private void kayitGetirStajyer()
 		{
 			baglanti.Open();
-			string kayit = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo, s.baslangicTarih , s.bitisTarih , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s ";
+			string kayit = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo,  s.bitisTarih , s.baslangicTarih  , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s ";
 			//musteriler tablosundaki tüm kayıtları çekecek olan sql sorgusu.
 			SqlCommand komut = new SqlCommand(kayit, baglanti);
 			//Sorgumuzu ve baglantimizi parametre olarak alan bir SqlCommand nesnesi oluşturuyoruz.
@@ -108,19 +108,8 @@ namespace Staj_Takip_Sistemi
 
         }
 
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            baglanti.Open();
 
-            string kayit = "delete from Stajyer where stajyerID = @silID ";
-            cmd = new SqlCommand(kayit, baglanti);
-            cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
-            cmd.ExecuteNonQuery();
-            baglanti.Close();
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void yenileButon_Click(object sender, EventArgs e)
         {
             baglanti.Open();
             string kayit = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo, s.baslangicTarih , s.bitisTarih , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s ";
@@ -132,34 +121,32 @@ namespace Staj_Takip_Sistemi
             baglanti.Close();
         }
 
-        private void guncelleBtn_Click(object sender, EventArgs e)
+        private void guncelleButon_Click(object sender, EventArgs e)
         {
-            string sorgu1 = "Update Stajyer set stajyerAd = @stajyerAd  where stajyerAd= @stajyerTextad";
-            string sorgu2 = "Update Stajyer set stajyerSoyad = @stajyerSoyad  where stajyerSoyad= @stajyerTextsoyad";
-            string sorgu3 = "Update Stajyer set baslangicTarih = @stajyerBaslangic  where baslangicTarih= @stajyerTextbaslangic";
-            string sorgu4 = "Update Stajyer set bitisTarih = @stajyerBitis where bitisTarih= @stajyerTextbitis";
-            string sorgu5 = "Update Stajyer set stajyerNo = @stajyerNo  where stajyerNo= @stajyerTextno";
-            string sorgu6 = "Update Stajyer set PersonelID = @stajyerPersonelID  where PersonelID= @stajyerTextpersonelID";
-            string sorgu7 = "Update Stajyer set DepartmanID = @stajyerDepartmanID where DepartmanID= @stajyerTextdepartman";
             baglanti.Open();
+            string sorgu1 = "Update Stajyer set stajyerAd = @stajyerAd , stajyerSoyad = @stajyerSoyad , baslangicTarih = @stajyerBaslangic , bitisTarih = @stajyerBitis , stajyerNo = @stajyerNo  , DepartmanID = @stajyerDepartmanID  where stajyerID= @stajyerID";
             cmd = new SqlCommand(sorgu1, baglanti);
-            cmd.Parameters.AddWithValue("@stajyerAd", stajyerAdtxt.Text);
-            cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
-            cmd.Parameters.AddWithValue("@stajyerSoyad", stajyerSoyadtxt.Text);
-            cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
-            cmd.Parameters.AddWithValue("@baslangicTarih", Convert.ToInt32(stajyerDepartmantxt.Text));
-            cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
-            cmd.Parameters.AddWithValue("@stajyerNo", Convert.ToInt32(stajyerNotxt.Text));
-            cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
-			cmd.Parameters.AddWithValue("@baslangicTarih", startTime.Value);
-            cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
-            cmd.Parameters.AddWithValue("@bitisTarih", finishTime.Value);
-            cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
-            cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
-            cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
+            cmd.Parameters.AddWithValue("@stajyerAd", stajyerAdTxt.Text);
+            cmd.Parameters.AddWithValue("@stajyerID", stajyerIDtxt.Text);
+            cmd.Parameters.AddWithValue("@stajyerSoyad", stajyerSoyadTxt.Text);
+            cmd.Parameters.AddWithValue("@stajyerBaslangic", Convert.ToDateTime(baslangicTxt.Text));
+            cmd.Parameters.AddWithValue("@stajyerBitis", Convert.ToDateTime(bitisTxt.Text));
+            cmd.Parameters.AddWithValue("@stajyerNo", stajyerNoTxt.Text);
+            cmd.Parameters.AddWithValue("@stajyerDepartmanID", departmanTxt.Text);
 
             cmd.ExecuteNonQuery();
-            con.Close();
+            baglanti.Close();
+        }
+
+        private void kayıtsilButon_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+
+            string kayit = "delete from Stajyer where stajyerID = @silID ";
+            cmd = new SqlCommand(kayit, baglanti);
+            cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
+            cmd.ExecuteNonQuery();
+            baglanti.Close();
         }
     }
 }
