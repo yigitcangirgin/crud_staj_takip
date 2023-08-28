@@ -16,7 +16,7 @@ namespace Staj_Takip_Sistemi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new girisSayfasi());
+            Application.Run(new stajyerBilgi());
         }
     }
 }
