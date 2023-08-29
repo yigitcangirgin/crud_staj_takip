@@ -34,7 +34,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.exitBtn = new System.Windows.Forms.PictureBox();
             this.minimizeBtn = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ekleButton = new System.Windows.Forms.Button();
             this.stajyerAdtxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -55,11 +55,14 @@
             this.startTime = new System.Windows.Forms.DateTimePicker();
             this.finishTime = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.addedLabel = new System.Windows.Forms.Label();
+            this.picError = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picError)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -111,21 +114,21 @@
             this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
             this.minimizeBtn.MouseHover += new System.EventHandler(this.minimizeBtn_MouseHover);
             // 
-            // button1
+            // ekleButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(211)))), ((int)(((byte)(226)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Location = new System.Drawing.Point(541, 491);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 37);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Ekle";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ekleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(211)))), ((int)(((byte)(226)))));
+            this.ekleButton.FlatAppearance.BorderSize = 0;
+            this.ekleButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ekleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ekleButton.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.ekleButton.Location = new System.Drawing.Point(541, 491);
+            this.ekleButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ekleButton.Name = "ekleButton";
+            this.ekleButton.Size = new System.Drawing.Size(183, 37);
+            this.ekleButton.TabIndex = 49;
+            this.ekleButton.Text = "Ekle";
+            this.ekleButton.UseVisualStyleBackColor = false;
+            this.ekleButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // stajyerAdtxt
             // 
@@ -309,6 +312,30 @@
             this.label2.TabIndex = 76;
             this.label2.Text = "Kıyı Emniyeti Genel Müdürlüğü Personel Sistemine Hoşgeldiniz.";
             // 
+            // addedLabel
+            // 
+            this.addedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.addedLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addedLabel.Location = new System.Drawing.Point(66, 497);
+            this.addedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.addedLabel.Name = "addedLabel";
+            this.addedLabel.Size = new System.Drawing.Size(219, 31);
+            this.addedLabel.TabIndex = 77;
+            this.addedLabel.Text = "Stajyer Eklendi.";
+            this.addedLabel.Visible = false;
+            // 
+            // picError
+            // 
+            this.picError.Image = ((System.Drawing.Image)(resources.GetObject("picError.Image")));
+            this.picError.Location = new System.Drawing.Point(8, 491);
+            this.picError.Margin = new System.Windows.Forms.Padding(2);
+            this.picError.Name = "picError";
+            this.picError.Size = new System.Drawing.Size(54, 37);
+            this.picError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picError.TabIndex = 78;
+            this.picError.TabStop = false;
+            this.picError.Visible = false;
+            // 
             // personelPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -316,6 +343,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1404, 769);
             this.ControlBox = false;
+            this.Controls.Add(this.picError);
+            this.Controls.Add(this.addedLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.finishTime);
             this.Controls.Add(this.startTime);
@@ -334,7 +363,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.minimizeBtn);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ekleButton);
             this.Controls.Add(this.stajyerAdtxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -352,6 +381,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,7 +393,7 @@
 		private System.Windows.Forms.PictureBox pictureBox3;
 		private System.Windows.Forms.PictureBox exitBtn;
 		private System.Windows.Forms.PictureBox minimizeBtn;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button ekleButton;
 		private System.Windows.Forms.TextBox stajyerAdtxt;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.PictureBox pictureBox1;
@@ -384,5 +414,7 @@
         private System.Windows.Forms.DateTimePicker startTime;
         private System.Windows.Forms.DateTimePicker finishTime;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label addedLabel;
+        private System.Windows.Forms.PictureBox picError;
     }
 }

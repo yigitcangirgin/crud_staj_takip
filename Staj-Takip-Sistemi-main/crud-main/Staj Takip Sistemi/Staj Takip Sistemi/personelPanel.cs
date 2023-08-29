@@ -77,10 +77,33 @@ namespace Staj_Takip_Sistemi
 			cmd.Parameters.AddWithValue("@stajyerNo", Convert.ToInt32(stajyerNotxt.Text));
 			cmd.Parameters.AddWithValue("@baslangicTarih", startTime.Value); // Use startTime.Value directly
 			cmd.Parameters.AddWithValue("@bitisTarih", finishTime.Value);   // Use finishTime.Value directly
+            cmd.ExecuteNonQuery();
+            con.Close();
 
-			cmd.ExecuteNonQuery();
-			con.Close();
+
+            try
+            {
+				if (cmd != null)
+                {
+                    addedLabel.Visible = true;
+                    picError.Visible = true;
+					
+                }
+                else
+                {
+                    addedLabel.Visible = false;
+                    picError.Visible = true;
+                }
+            }
+            catch (Exception Unhandled)
+            {
+                
+            }
+
+
+            
 
 		}
-	}
+
+    }
 }
