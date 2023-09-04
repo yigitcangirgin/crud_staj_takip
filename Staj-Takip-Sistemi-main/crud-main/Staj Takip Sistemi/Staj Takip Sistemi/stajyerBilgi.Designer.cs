@@ -58,7 +58,6 @@
             this.bitisTxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lblmesaj = new System.Windows.Forms.Label();
-            this.yenileButon = new System.Windows.Forms.Button();
             this.guncelleButon = new System.Windows.Forms.Button();
             this.kayıtsilButon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -346,21 +345,6 @@
             this.lblmesaj.Text = "!Kayıt Silindi";
             this.lblmesaj.Visible = false;
             // 
-            // yenileButon
-            // 
-            this.yenileButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(211)))), ((int)(((byte)(226)))));
-            this.yenileButon.FlatAppearance.BorderSize = 0;
-            this.yenileButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.yenileButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.yenileButon.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.yenileButon.Location = new System.Drawing.Point(967, 304);
-            this.yenileButon.Name = "yenileButon";
-            this.yenileButon.Size = new System.Drawing.Size(121, 32);
-            this.yenileButon.TabIndex = 89;
-            this.yenileButon.Text = "Yenile";
-            this.yenileButon.UseVisualStyleBackColor = false;
-            this.yenileButon.Click += new System.EventHandler(this.yenileButon_Click);
-            // 
             // guncelleButon
             // 
             this.guncelleButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(211)))), ((int)(((byte)(226)))));
@@ -368,7 +352,7 @@
             this.guncelleButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.guncelleButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.guncelleButon.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.guncelleButon.Location = new System.Drawing.Point(967, 359);
+            this.guncelleButon.Location = new System.Drawing.Point(967, 321);
             this.guncelleButon.Name = "guncelleButon";
             this.guncelleButon.Size = new System.Drawing.Size(121, 30);
             this.guncelleButon.TabIndex = 90;
@@ -383,7 +367,7 @@
             this.kayıtsilButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.kayıtsilButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.kayıtsilButon.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.kayıtsilButon.Location = new System.Drawing.Point(967, 421);
+            this.kayıtsilButon.Location = new System.Drawing.Point(967, 384);
             this.kayıtsilButon.Name = "kayıtsilButon";
             this.kayıtsilButon.Size = new System.Drawing.Size(121, 29);
             this.kayıtsilButon.TabIndex = 91;
@@ -400,7 +384,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.kayıtsilButon);
             this.Controls.Add(this.guncelleButon);
-            this.Controls.Add(this.yenileButon);
             this.Controls.Add(this.lblmesaj);
             this.Controls.Add(this.personelTxt);
             this.Controls.Add(this.label4);
@@ -475,7 +458,6 @@
         private System.Windows.Forms.TextBox bitisTxt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblmesaj;
-        private System.Windows.Forms.Button yenileButon;
         private System.Windows.Forms.Button guncelleButon;
         private System.Windows.Forms.Button kayıtsilButon;
     }

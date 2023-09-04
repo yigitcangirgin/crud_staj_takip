@@ -109,17 +109,6 @@ namespace Staj_Takip_Sistemi
         }
 
 
-        private void yenileButon_Click(object sender, EventArgs e)
-        {
-            baglanti.Open();
-            string kayit = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo, s.baslangicTarih , s.bitisTarih , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s ";
-            SqlCommand komut = new SqlCommand(kayit, baglanti);
-            SqlDataAdapter da = new SqlDataAdapter(komut);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            stajyerData.DataSource = dt;
-            baglanti.Close();
-        }
 
         private void guncelleButon_Click(object sender, EventArgs e)
         {
@@ -135,6 +124,15 @@ namespace Staj_Takip_Sistemi
             cmd.Parameters.AddWithValue("@stajyerDepartmanID", departmanTxt.Text);
 
             cmd.ExecuteNonQuery();
+            string kayit = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo, s.baslangicTarih , s.bitisTarih , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s ";
+            SqlCommand komut = new SqlCommand(kayit, baglanti);
+            SqlDataAdapter da = new SqlDataAdapter(komut);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            stajyerData.DataSource = dt;
+
+
+
             baglanti.Close();
         }
 
@@ -146,6 +144,13 @@ namespace Staj_Takip_Sistemi
             cmd = new SqlCommand(kayit, baglanti);
             cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
             cmd.ExecuteNonQuery();
+            string kayit1 = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo, s.baslangicTarih , s.bitisTarih , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s ";
+            SqlCommand komut = new SqlCommand(kayit1, baglanti);
+            SqlDataAdapter da = new SqlDataAdapter(komut);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            stajyerData.DataSource = dt;
+
             baglanti.Close();
         }
     }
