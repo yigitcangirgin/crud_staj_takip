@@ -61,7 +61,7 @@ namespace Staj_Takip_Sistemi
 
         private void personelBtn_Click(object sender, EventArgs e)
         {
-            string sorgu = "SELECT * FROM Personel where personelNo=@user AND  personelSifre=@pass";
+            string sorgu = "SELECT * FROM Personel WITH(NOLOCK) where personelNo=@user AND  personelSifre=@pass";
             this.con = sqlbaglanti.baglanti;
             cmd = new SqlCommand(sorgu, con);
             cmd.Parameters.AddWithValue("@user", personelNoTxt.Text);

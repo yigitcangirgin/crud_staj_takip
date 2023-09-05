@@ -35,11 +35,10 @@
             this.minimizeBtn = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.stajProjeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stajProjeDataSet = new Staj_Takip_Sistemi.StajProjeDataSet();
+            this.stajProjeDataSet = new Staj_Takip_Sistemi.Staj_Takip_SistemiDataSet();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.stajProjeDataSet1 = new Staj_Takip_Sistemi.StajProjeDataSet();
             this.stajyerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stajyerTableAdapter = new Staj_Takip_Sistemi.StajProjeDataSetTableAdapters.StajyerTableAdapter();
+            this.stajyerTableAdapter = new Staj_Takip_Sistemi.Staj_Takip_SistemiDataSetTableAdapters.StajyerTableAdapter();
             this.stajyerData = new System.Windows.Forms.DataGridView();
             this.stajyerIDtxt = new System.Windows.Forms.TextBox();
             this.stajyerSoyadTxt = new System.Windows.Forms.TextBox();
@@ -59,14 +58,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblmesaj = new System.Windows.Forms.Label();
             this.guncelleButon = new System.Windows.Forms.Button();
-            this.kayıtsilButon = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stajProjeDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stajProjeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stajProjeDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stajyerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stajyerData)).BeginInit();
             this.SuspendLayout();
@@ -129,11 +127,6 @@
             this.stajProjeDataSet.DataSetName = "StajProjeDataSet";
             this.stajProjeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // stajProjeDataSet1
-            // 
-            this.stajProjeDataSet1.DataSetName = "StajProjeDataSet";
-            this.stajProjeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // stajyerBindingSource
             // 
             this.stajyerBindingSource.DataMember = "Stajyer";
@@ -153,6 +146,7 @@
             this.stajyerData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stajyerData.Location = new System.Drawing.Point(483, 55);
             this.stajyerData.Name = "stajyerData";
+            this.stajyerData.ReadOnly = true;
             this.stajyerData.Size = new System.Drawing.Size(778, 175);
             this.stajyerData.TabIndex = 44;
             this.stajyerData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stajyerData_CellClick);
@@ -338,11 +332,11 @@
             // 
             this.lblmesaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblmesaj.ForeColor = System.Drawing.Color.White;
-            this.lblmesaj.Location = new System.Drawing.Point(977, 480);
+            this.lblmesaj.Location = new System.Drawing.Point(928, 413);
             this.lblmesaj.Name = "lblmesaj";
-            this.lblmesaj.Size = new System.Drawing.Size(100, 23);
+            this.lblmesaj.Size = new System.Drawing.Size(175, 23);
             this.lblmesaj.TabIndex = 87;
-            this.lblmesaj.Text = "!Kayıt Silindi";
+            this.lblmesaj.Text = "!Kayıt Güncellendi";
             this.lblmesaj.Visible = false;
             // 
             // guncelleButon
@@ -352,7 +346,7 @@
             this.guncelleButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.guncelleButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.guncelleButon.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.guncelleButon.Location = new System.Drawing.Point(967, 321);
+            this.guncelleButon.Location = new System.Drawing.Point(967, 306);
             this.guncelleButon.Name = "guncelleButon";
             this.guncelleButon.Size = new System.Drawing.Size(121, 30);
             this.guncelleButon.TabIndex = 90;
@@ -360,20 +354,20 @@
             this.guncelleButon.UseVisualStyleBackColor = false;
             this.guncelleButon.Click += new System.EventHandler(this.guncelleButon_Click);
             // 
-            // kayıtsilButon
+            // deleteButton
             // 
-            this.kayıtsilButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(211)))), ((int)(((byte)(226)))));
-            this.kayıtsilButon.FlatAppearance.BorderSize = 0;
-            this.kayıtsilButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.kayıtsilButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kayıtsilButon.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.kayıtsilButon.Location = new System.Drawing.Point(967, 384);
-            this.kayıtsilButon.Name = "kayıtsilButon";
-            this.kayıtsilButon.Size = new System.Drawing.Size(121, 29);
-            this.kayıtsilButon.TabIndex = 91;
-            this.kayıtsilButon.Text = "Kayıt Sil";
-            this.kayıtsilButon.UseVisualStyleBackColor = false;
-            this.kayıtsilButon.Click += new System.EventHandler(this.kayıtsilButon_Click);
+            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(211)))), ((int)(((byte)(226)))));
+            this.deleteButton.FlatAppearance.BorderSize = 0;
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.deleteButton.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.deleteButton.Location = new System.Drawing.Point(967, 359);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(121, 30);
+            this.deleteButton.TabIndex = 91;
+            this.deleteButton.Text = "Sil";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // stajyerBilgi
             // 
@@ -382,7 +376,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1391, 781);
             this.ControlBox = false;
-            this.Controls.Add(this.kayıtsilButon);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.guncelleButon);
             this.Controls.Add(this.lblmesaj);
             this.Controls.Add(this.personelTxt);
@@ -420,7 +414,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stajProjeDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stajProjeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stajProjeDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stajyerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stajyerData)).EndInit();
             this.ResumeLayout(false);
@@ -435,11 +428,10 @@
 		private System.Windows.Forms.PictureBox minimizeBtn;
 		private System.Windows.Forms.PictureBox pictureBox3;
 		private System.Windows.Forms.BindingSource stajProjeDataSetBindingSource;
-		private StajProjeDataSet stajProjeDataSet;
+		private Staj_Takip_SistemiDataSet stajProjeDataSet;
 		private System.Windows.Forms.ToolTip toolTip1;
-        private StajProjeDataSet stajProjeDataSet1;
         private System.Windows.Forms.BindingSource stajyerBindingSource;
-        private StajProjeDataSetTableAdapters.StajyerTableAdapter stajyerTableAdapter;
+        private Staj_Takip_SistemiDataSetTableAdapters.StajyerTableAdapter stajyerTableAdapter;
         private System.Windows.Forms.DataGridView stajyerData;
         private System.Windows.Forms.TextBox stajyerIDtxt;
         private System.Windows.Forms.TextBox stajyerSoyadTxt;
@@ -459,6 +451,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblmesaj;
         private System.Windows.Forms.Button guncelleButon;
-        private System.Windows.Forms.Button kayıtsilButon;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

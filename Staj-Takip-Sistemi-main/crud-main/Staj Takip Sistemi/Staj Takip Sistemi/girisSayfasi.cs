@@ -21,7 +21,7 @@ namespace Staj_Takip_Sistemi
             SqlConnection con;
             SqlCommand cmd;
             SqlDataReader dr;
-            SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-RJFLT08;Initial Catalog=""Staj Takip Sistemi"";Integrated Security=True");
+            SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-QFS3MJA\SQLEXPRESS;Initial Catalog=""crud"";Integrated Security=True");
         }
 
         private void Form1_Load(object sender, EventArgs e)

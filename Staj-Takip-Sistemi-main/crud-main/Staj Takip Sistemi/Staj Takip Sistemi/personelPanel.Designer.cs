@@ -376,6 +376,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "personelPanel";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.personelPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).EndInit();

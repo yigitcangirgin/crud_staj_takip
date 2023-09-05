@@ -10,7 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Staj_Takip_Sistemi.StajProjeDataSet;
+using static Staj_Takip_Sistemi.Staj_Takip_SistemiDataSet;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Staj_Takip_Sistemi
@@ -25,21 +25,16 @@ namespace Staj_Takip_Sistemi
 		SqlDataAdapter da;
 		DataSet ds;
 		SqlCommand komut;
-		SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-QFS3MJA\SQLEXPRESS;Initial Catalog=crud;Integrated Security=True");
-		private void kayitGetirStajyer()
+		SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-QFS3MJA\SQLEXPRESS;Initial Catalog=""crud"";Integrated Security=True");
+
+        private void kayitGetirStajyer()
 		{
-			baglanti.Open();
-			string kayit = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo,  s.bitisTarih , s.baslangicTarih  , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s ";
-			//musteriler tablosundaki tüm kayıtları çekecek olan sql sorgusu.
+			string kayit = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo,  s.bitisTarih , s.baslangicTarih  , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s WITH(NOLOCK) ";
 			SqlCommand komut = new SqlCommand(kayit, baglanti);
-			//Sorgumuzu ve baglantimizi parametre olarak alan bir SqlCommand nesnesi oluşturuyoruz.
 			SqlDataAdapter da = new SqlDataAdapter(komut);
-			//SqlDataAdapter sınıfı verilerin databaseden aktarılması işlemini gerçekleştirir.
 			DataTable dt = new DataTable();
 			da.Fill(dt);
-			//Bir DataTable oluşturarak DataAdapter ile getirilen verileri tablo içerisine dolduruyoruz.
 			stajyerData.DataSource = dt;
-			//Formumuzdaki DataGridViewin veri kaynağını oluşturduğumuz tablo olarak gösteriyoruz.
 			baglanti.Close();
 		}
 		private void exitBtn_Click(object sender, EventArgs e)
@@ -107,36 +102,46 @@ namespace Staj_Takip_Sistemi
             personelTxt.Text = stajyerData.Rows[e.RowIndex].Cells[1].Value.ToString();
 
         }
-
-
-
         private void guncelleButon_Click(object sender, EventArgs e)
         {
-            baglanti.Open();
-            string sorgu1 = "Update Stajyer set stajyerAd = @stajyerAd , stajyerSoyad = @stajyerSoyad , baslangicTarih = @stajyerBaslangic , bitisTarih = @stajyerBitis , stajyerNo = @stajyerNo  , DepartmanID = @stajyerDepartmanID  where stajyerID= @stajyerID";
-            cmd = new SqlCommand(sorgu1, baglanti);
-            cmd.Parameters.AddWithValue("@stajyerAd", stajyerAdTxt.Text);
-            cmd.Parameters.AddWithValue("@stajyerID", stajyerIDtxt.Text);
-            cmd.Parameters.AddWithValue("@stajyerSoyad", stajyerSoyadTxt.Text);
-            cmd.Parameters.AddWithValue("@stajyerBaslangic", Convert.ToDateTime(baslangicTxt.Text));
-            cmd.Parameters.AddWithValue("@stajyerBitis", Convert.ToDateTime(bitisTxt.Text));
-            cmd.Parameters.AddWithValue("@stajyerNo", stajyerNoTxt.Text);
-            cmd.Parameters.AddWithValue("@stajyerDepartmanID", departmanTxt.Text);
+			if (stajyerIDtxt.Text == "" || stajyerAdTxt.Text == "" || stajyerSoyadTxt.Text == "" || departmanTxt.Text == "" || baslangicTxt.Text == "" || bitisTxt.Text == "" || stajyerNoTxt.Text == "")
+			{
+				MessageBox.Show("Eksik Bilgileri Kontrol Ediniz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				baglanti.Open();
+				string sorgu1 = "Update Stajyer set stajyerAd = @stajyerAd , stajyerSoyad = @stajyerSoyad , baslangicTarih = @stajyerBaslangic , bitisTarih = @stajyerBitis , stajyerNo = @stajyerNo  , DepartmanID = @stajyerDepartmanID, personelID = @personelID" +
+					"  where stajyerID= @stajyerID";
+				cmd = new SqlCommand(sorgu1, baglanti);
+				cmd.Parameters.AddWithValue("@stajyerAd", stajyerAdTxt.Text);
+				cmd.Parameters.AddWithValue("@stajyerID", stajyerIDtxt.Text);
+				cmd.Parameters.AddWithValue("@stajyerSoyad", stajyerSoyadTxt.Text);
+				cmd.Parameters.AddWithValue("@stajyerBaslangic", Convert.ToDateTime(baslangicTxt.Text));
+				cmd.Parameters.AddWithValue("@stajyerBitis", Convert.ToDateTime(bitisTxt.Text));
+				cmd.Parameters.AddWithValue("@stajyerNo", stajyerNoTxt.Text);
+				cmd.Parameters.AddWithValue("@stajyerDepartmanID", departmanTxt.Text);
+                cmd.Parameters.AddWithValue("@personelID", 1);
 
-            cmd.ExecuteNonQuery();
-            string kayit = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo, s.baslangicTarih , s.bitisTarih , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s ";
-            SqlCommand komut = new SqlCommand(kayit, baglanti);
-            SqlDataAdapter da = new SqlDataAdapter(komut);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            stajyerData.DataSource = dt;
 
+                string kayit = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo,  s.bitisTarih , s.baslangicTarih  , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s WITH(NOLOCK) ";
+                //musteriler tablosundaki tüm kayıtları çekecek olan sql sorgusu.
+                SqlCommand komut = new SqlCommand(kayit, baglanti);
+                //Sorgumuzu ve baglantimizi parametre olarak alan bir SqlCommand nesnesi oluşturuyoruz.
+                SqlDataAdapter da = new SqlDataAdapter(komut);
+                //SqlDataAdapter sınıfı verilerin databaseden aktarılması işlemini gerçekleştirir.
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                //Bir DataTable oluşturarak DataAdapter ile getirilen verileri tablo içerisine dolduruyoruz.
+                stajyerData.DataSource = dt;
 
-
-            baglanti.Close();
+                cmd.ExecuteNonQuery();
+				kayitGetirStajyer();
+				baglanti.Close();
+			}
         }
 
-        private void kayıtsilButon_Click(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
         {
             baglanti.Open();
 

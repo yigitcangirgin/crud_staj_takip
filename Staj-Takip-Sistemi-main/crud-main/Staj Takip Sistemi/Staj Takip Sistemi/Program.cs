@@ -16,7 +16,7 @@ namespace Staj_Takip_Sistemi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new yoneticiGiris());
+            Application.Run(new adminPanel());
         }
     }
 }

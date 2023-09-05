@@ -22,7 +22,7 @@ namespace Staj_Takip_Sistemi
 		SqlConnection con;
 		SqlCommand cmd;
 		SqlDataReader dr;
-		SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-4UEBQES\SQLEXPRESS;Initial Catalog=sts;Integrated Security=True");
+		SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-QFS3MJA\SQLEXPRESS;Initial Catalog=""crud"";Integrated Security=True");
 
 		private void label1_Click(object sender, EventArgs e)
         {
@@ -61,7 +61,7 @@ namespace Staj_Takip_Sistemi
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string sorgu = "SELECT * FROM Admin where adminNick=@user AND  adminSifre=@pass";
+			string sorgu = "SELECT * FROM Admin WITH(NOLOCK) where adminNick=@user AND  adminSifre=@pass";
 			this.con = sqlbaglanti.baglanti;
 			cmd = new SqlCommand(sorgu, con);
 			cmd.Parameters.AddWithValue("@user", personelNoTxt.Text);
@@ -72,8 +72,8 @@ namespace Staj_Takip_Sistemi
 			{
 				if (dr.Read())
 				{
-					personelPanel personelPaneli = new personelPanel();
-					personelPaneli.Show();
+					adminPanel adminpaneli = new adminPanel();
+                    adminpaneli.Show();
 					this.Hide();
 
 				}

@@ -22,8 +22,6 @@ namespace Staj_Takip_Sistemi
 			InitializeComponent();
 		}
 
-
-
 		private void exitBtn_MouseHover(object sender, EventArgs e)
 		{
 			toolTip1.SetToolTip(exitBtn, "Kapat");
@@ -49,7 +47,6 @@ namespace Staj_Takip_Sistemi
 		private void exitBtn_Click(object sender, EventArgs e)
 		{
 			System.Windows.Forms.Application.Exit(); //ekranda sağ üstteki çarpı butonuna basınca ekranı kapatma kodu
-
 		}
 
 		private void minimizeBtn_Click(object sender, EventArgs e)
@@ -80,7 +77,6 @@ namespace Staj_Takip_Sistemi
             cmd.ExecuteNonQuery();
             con.Close();
 
-
             try
             {
 				if (cmd != null)
@@ -99,11 +95,11 @@ namespace Staj_Takip_Sistemi
             {
                 
             }
-
-
-            
-
 		}
 
+        private void personelPanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
