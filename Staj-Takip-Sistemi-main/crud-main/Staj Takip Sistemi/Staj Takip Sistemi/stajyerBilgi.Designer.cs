@@ -35,10 +35,10 @@
             this.minimizeBtn = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.stajProjeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stajProjeDataSet = new Staj_Takip_Sistemi.Staj_Takip_SistemiDataSet();
+            this.stajProjeDataSet = new Staj_Takip_Sistemi.crudDataSet();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.stajyerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stajyerTableAdapter = new Staj_Takip_Sistemi.Staj_Takip_SistemiDataSetTableAdapters.StajyerTableAdapter();
+            this.stajyerTableAdapter = new Staj_Takip_Sistemi.crudDataSetTableAdapters.StajyerTableAdapter();
             this.stajyerData = new System.Windows.Forms.DataGridView();
             this.stajyerIDtxt = new System.Windows.Forms.TextBox();
             this.stajyerSoyadTxt = new System.Windows.Forms.TextBox();
@@ -162,6 +162,7 @@
             this.stajyerIDtxt.Name = "stajyerIDtxt";
             this.stajyerIDtxt.Size = new System.Drawing.Size(353, 22);
             this.stajyerIDtxt.TabIndex = 73;
+            this.stajyerIDtxt.TextChanged += new System.EventHandler(this.stajyerIDtxt_TextChanged);
             // 
             // stajyerSoyadTxt
             // 
@@ -428,10 +429,10 @@
 		private System.Windows.Forms.PictureBox minimizeBtn;
 		private System.Windows.Forms.PictureBox pictureBox3;
 		private System.Windows.Forms.BindingSource stajProjeDataSetBindingSource;
-		private Staj_Takip_SistemiDataSet stajProjeDataSet;
+		private crudDataSet stajProjeDataSet;
 		private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.BindingSource stajyerBindingSource;
-        private Staj_Takip_SistemiDataSetTableAdapters.StajyerTableAdapter stajyerTableAdapter;
+        private crudDataSetTableAdapters.StajyerTableAdapter stajyerTableAdapter;
         private System.Windows.Forms.DataGridView stajyerData;
         private System.Windows.Forms.TextBox stajyerIDtxt;
         private System.Windows.Forms.TextBox stajyerSoyadTxt;

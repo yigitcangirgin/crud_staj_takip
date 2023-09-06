@@ -61,43 +61,59 @@ namespace Staj_Takip_Sistemi
 			this.Hide();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void ekleButton_Click(object sender, EventArgs e)
 		{
-			string sorgu = "Insert into Stajyer(stajyerAd, stajyerSoyad, DepartmanID, stajyerNo, baslangicTarih, bitisTarih) " +
-						   "Values (@name, @surname, @departman, @stajyerNo, @baslangicTarih, @bitisTarih);";
-			this.con = sqlbaglanti.baglanti;
-			con.Open();
-			cmd = new SqlCommand(sorgu, con);
-			cmd.Parameters.AddWithValue("@name", stajyerAdtxt.Text);
-			cmd.Parameters.AddWithValue("@surname", stajyerSoyadtxt.Text);
-			cmd.Parameters.AddWithValue("@departman", Convert.ToInt32(stajyerDepartmantxt.Text));
-			cmd.Parameters.AddWithValue("@stajyerNo", Convert.ToInt32(stajyerNotxt.Text));
-			cmd.Parameters.AddWithValue("@baslangicTarih", startTime.Value); // Use startTime.Value directly
-			cmd.Parameters.AddWithValue("@bitisTarih", finishTime.Value);   // Use finishTime.Value directly
-            cmd.ExecuteNonQuery();
-            con.Close();
 
-            try
-            {
-				if (cmd != null)
-                {
-                    addedLabel.Visible = true;
-                    picError.Visible = true;
-					
-                }
-                else
-                {
-                    addedLabel.Visible = false;
-                    picError.Visible = true;
-                }
+			if (stajyerAdtxt.Text == "" || stajyerSoyadtxt.Text == "" || stajyerDepartmantxt.Text=="" || stajyerNotxt.Text == "" || startTime.Text == ""|| finishTime.Text == "")
+			{
+                MessageBox.Show("Eksik bilgileri tamamlayınız!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-            catch (Exception Unhandled)
-            {
-                
+            else
+			{
+
+                string sorgu = "Insert into Stajyer(stajyerAd, stajyerSoyad, DepartmanID, stajyerNo, baslangicTarih, bitisTarih) " +
+                               "Values (@name, @surname, @departman, @stajyerNo, @baslangicTarih, @bitisTarih);";
+                this.con = sqlbaglanti.baglanti;
+                con.Open();
+                cmd = new SqlCommand(sorgu, con);
+
+                cmd.Parameters.AddWithValue("@name", stajyerAdtxt.Text);
+                cmd.Parameters.AddWithValue("@surname", stajyerSoyadtxt.Text);
+                cmd.Parameters.AddWithValue("@departman", Convert.ToInt32(stajyerDepartmantxt.Text));
+                cmd.Parameters.AddWithValue("@stajyerNo", Convert.ToInt32(stajyerNotxt.Text));
+                cmd.Parameters.AddWithValue("@baslangicTarih", startTime.Value); // Use startTime.Value directly
+                cmd.Parameters.AddWithValue("@bitisTarih", finishTime.Value);   // Use finishTime.Value directly
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                try
+                {
+                    if (cmd != null)
+                    {
+                        addedLabel.Visible = true;
+                        picError.Visible = true;
+
+                    }
+                    else
+                    {
+                        addedLabel.Visible = false;
+                        picError.Visible = true;
+                    }
+                }
+                catch (Exception Unhandled)
+                {
+
+                }
             }
 		}
 
         private void personelPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

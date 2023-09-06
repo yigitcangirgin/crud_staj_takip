@@ -128,7 +128,7 @@
             this.ekleButton.TabIndex = 49;
             this.ekleButton.Text = "Ekle";
             this.ekleButton.UseVisualStyleBackColor = false;
-            this.ekleButton.Click += new System.EventHandler(this.button1_Click);
+            this.ekleButton.Click += new System.EventHandler(this.ekleButton_Click);
             // 
             // stajyerAdtxt
             // 
@@ -226,6 +226,7 @@
             this.label7.Size = new System.Drawing.Size(189, 38);
             this.label7.TabIndex = 64;
             this.label7.Text = "Stajyer Ekle";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 

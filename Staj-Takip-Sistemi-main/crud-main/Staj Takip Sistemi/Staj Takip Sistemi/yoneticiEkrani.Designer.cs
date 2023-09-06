@@ -276,6 +276,7 @@
             this.stajyerData.ReadOnly = true;
             this.stajyerData.Size = new System.Drawing.Size(778, 175);
             this.stajyerData.TabIndex = 96;
+            this.stajyerData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stajyerData_CellClick);
             // 
             // pictureBox3
             // 
@@ -286,6 +287,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 95;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // exitBtn
             // 
@@ -297,6 +299,7 @@
             this.exitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.exitBtn.TabIndex = 94;
             this.exitBtn.TabStop = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // minimizeBtn
             // 
@@ -308,6 +311,7 @@
             this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.minimizeBtn.TabIndex = 93;
             this.minimizeBtn.TabStop = false;
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
             // 
             // pictureBox1
             // 

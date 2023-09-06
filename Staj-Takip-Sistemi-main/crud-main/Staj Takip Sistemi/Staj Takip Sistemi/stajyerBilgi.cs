@@ -10,7 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Staj_Takip_Sistemi.Staj_Takip_SistemiDataSet;
+using static Staj_Takip_Sistemi.crudDataSet;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Staj_Takip_Sistemi
@@ -85,11 +85,6 @@ namespace Staj_Takip_Sistemi
 
 		}
 
-		private void stajyerData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
-
 		public void stajyerData_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			stajyerIDtxt.Text = stajyerData.Rows[e.RowIndex].Cells[7].Value.ToString();
@@ -125,7 +120,6 @@ namespace Staj_Takip_Sistemi
 
 
                 string kayit = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo,  s.bitisTarih , s.baslangicTarih  , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s WITH(NOLOCK) ";
-                //musteriler tablosundaki tüm kayıtları çekecek olan sql sorgusu.
                 SqlCommand komut = new SqlCommand(kayit, baglanti);
                 //Sorgumuzu ve baglantimizi parametre olarak alan bir SqlCommand nesnesi oluşturuyoruz.
                 SqlDataAdapter da = new SqlDataAdapter(komut);
@@ -149,7 +143,7 @@ namespace Staj_Takip_Sistemi
             cmd = new SqlCommand(kayit, baglanti);
             cmd.Parameters.AddWithValue("@silID", stajyerIDtxt.Text);
             cmd.ExecuteNonQuery();
-            string kayit1 = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo, s.baslangicTarih , s.bitisTarih , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s ";
+            string kayit1 = "SELECT  s.DepartmanID, s.personelID, s.stajyerNo, s.baslangicTarih , s.bitisTarih , s.stajyerSoyad , s.stajyerAd ,s.stajyerID  from Stajyer as s WITH(NOLOCK) ";
             SqlCommand komut = new SqlCommand(kayit1, baglanti);
             SqlDataAdapter da = new SqlDataAdapter(komut);
             DataTable dt = new DataTable();
@@ -157,6 +151,16 @@ namespace Staj_Takip_Sistemi
             stajyerData.DataSource = dt;
 
             baglanti.Close();
+        }
+
+        private void stajyerData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void stajyerIDtxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

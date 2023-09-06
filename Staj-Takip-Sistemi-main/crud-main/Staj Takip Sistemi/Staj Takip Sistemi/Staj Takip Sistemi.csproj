@@ -58,6 +58,11 @@
     <Compile Include="adminPanel.Designer.cs">
       <DependentUpon>adminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="crudDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crudDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="girisSayfasi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,11 +89,6 @@
     </Compile>
     <Compile Include="stajyerBilgi.Designer.cs">
       <DependentUpon>stajyerBilgi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staj_Takip_SistemiDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Staj_Takip_SistemiDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="yoneticiEkrani.cs">
       <SubType>Form</SubType>
@@ -135,6 +135,17 @@
     <EmbeddedResource Include="yoneticiGiris.resx">
       <DependentUpon>yoneticiGiris.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="crudDataSet.xsc">
+      <DependentUpon>crudDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="crudDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>crudDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="crudDataSet.xss">
+      <DependentUpon>crudDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -144,17 +155,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Staj_Takip_SistemiDataSet.xsc">
-      <DependentUpon>Staj_Takip_SistemiDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Staj_Takip_SistemiDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Staj_Takip_SistemiDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Staj_Takip_SistemiDataSet.xss">
-      <DependentUpon>Staj_Takip_SistemiDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
